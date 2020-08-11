@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PELICULAS</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<div id="listado">
+		
+		<H1>LISTADO DE PELICULAS</H1>
+
+		
+
+				<ul id="lista">
+			
+				</ul>
+
+
+			</table>
+
+		</div>
+
+	</div>
+</body>
+<script type="text/javascript" >
+	
+	
+var peliculas = [
+ {
+   "Nombre": "El señor de los anillos",
+   "Genero": "Acción"
+ },
+{
+   "Nombre": "Regreso al Futuro",
+   "Genero": "Acción"
+ },
+{
+   "Nombre": "Los increibles 2",
+   "Genero": "Animación"
+ },
+ {
+   "Nombre": "Algo pasa con Mary",
+   "Genero": "Comedia"
+ },
+ {
+   "Nombre": "Matrix",
+   "Genero": "Acción"
+ },
+ {
+   "Nombre": "Hercules",
+   "Genero": "Animación"
+ },
+ {
+   "Nombre": "Los puentes de Madison",
+   "Genero": "Romántica"
+ },
+];
+	
+	var longitud = peliculas.length;
+	var listado = document.querySelector("#lista");
+
+	for(var i = 0; i<longitud;i++)
+	{
+
+		var list =document.createElement("li");
+		list.setAttribute("class","imagen");
+		list.textContent = "Nombre: "+ peliculas[i].Nombre + "   Genero: " + peliculas[i].Genero;
+		listado.appendChild(list);
+		var imagen = document.createElement("IMG");
+			
+		var genero = consultaGenero(peliculas[i].Genero);	
+			
+		if (genero=="accion")
+		{
+			
+			
+			imagen.setAttribute("src","accion.jpg");
+		}
+		if (genero=="animacion")
+		{
+			imagen.setAttribute("src","animacion.jpg");
+		}
+		if (genero=="romantica")
+		{
+			imagen.setAttribute("src","romantico.png");
+		}
+		if (genero=="comedia")
+		{
+			imagen.setAttribute("src","comedia.png");
+		}
+		listado.appendChild(imagen);
+		//var imagen = document.createElement("IMG");
+		}
+		
+	
+	function consultaGenero(genero)
+	{
+		if (genero == "Acción")
+		{
+			return "accion";
+
+		}
+		if (genero == "Animación")
+		{
+			return "animacion";
+		}
+		if (genero == "Romántica")
+		{
+			return "romantica";
+		}
+		if (genero == "Comedia")
+		{
+			return "comedia";
+		}
+
+
+	}
+
+
+
+
+/*var someData = [
+   {firstName: "Max", lastName: "Mustermann", age: 40},
+   {firstName: "Hagbard", lastName: "Celine", age: 44},
+   {firstName: "Karl", lastName: "Koch", age: 42},
+];*/
+
+
+</script>
+</html>
